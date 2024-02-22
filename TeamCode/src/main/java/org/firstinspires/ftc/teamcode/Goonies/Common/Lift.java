@@ -12,6 +12,6 @@ public class Lift {
 	}
 
 	public void setPower(double power){
-		_liftMotor.setPower(power/3);
+		_liftMotor.setPower(power);
 	}
 }

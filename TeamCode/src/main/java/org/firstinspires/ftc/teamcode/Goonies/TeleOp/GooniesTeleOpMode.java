@@ -13,12 +13,11 @@ public class GooniesTeleOpMode extends LinearOpMode {
 	IGamePad _gamePad2;
 
 	public GooniesTeleOpMode(){
-
+		_robot = new GooniesRobot();
 	}
 
 	@Override
 	public void runOpMode(){
-		_robot = new GooniesRobot();
 		_gamePad1 = new GamePad1((GooniesRobot)_robot, gamepad1);
 		_gamePad2 = new GamePad2((GooniesRobot)_robot, gamepad2);
 

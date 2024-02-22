@@ -16,7 +16,10 @@ public class GamePad2  implements IGamePad{
 	@Override
 	public void HandleInput(){
 		double y = _gamePad.left_stick_y;
+		int reduction = 3;
 
-		_robot.Lift.setPower(y);
+		if (_gamePad.right_bumper){reduction = 1;}
+
+		_robot.Lift.setPower(y/reduction);
 	}
 }
