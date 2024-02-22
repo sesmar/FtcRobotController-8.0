@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.Goonies.TeleOp;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+import org.firstinspires.ftc.teamcode.Goonies.Common.GooniesRobot;
 import org.firstinspires.ftc.teamcode.Goonies.Common.IRobot;
 
 @TeleOp(name="Goonies: TeleOpMode", group="Goonies")
@@ -11,8 +12,16 @@ public class GooniesTeleOpMode extends LinearOpMode {
 	IGamePad _gamePad1;
 	IGamePad _gamePad2;
 
+	public GooniesTeleOpMode(){
+
+	}
+
 	@Override
 	public void runOpMode(){
+		_robot = new GooniesRobot();
+		_gamePad1 = new GamePad1((GooniesRobot)_robot, gamepad1);
+		_gamePad2 = new GamePad2((GooniesRobot)_robot, gamepad2);
+
 		if (_robot != null){
 			_robot.Initialize(this.hardwareMap);
 		} else {
